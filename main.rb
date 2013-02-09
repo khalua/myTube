@@ -19,10 +19,10 @@ get '/videos' do
 end
 
 post '/create' do
-  @title = params[:title]
-  @description = params[:description]
+  @title = params[:title].gsub("'","")
+  @description = params[:description].gsub("'","")
   @url = params[:url]
-  @category = params[:category]
+  @category = params[:category].gsub("'","")
 
   sql = "insert into videos (title, description, url, category, timestamp) values ('#{@title}','#{@description}','#{@url}','#{@category}',now());"
 

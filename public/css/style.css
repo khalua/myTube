@@ -1,3 +1,18 @@
 select {
   width: 284px;
 }
+
+.thumbnail {
+  height: 325px;
+}
+
+.thumbnail_text {
+  height: 140px;
+  overflow: scroll;
+}
+
+.thumbnail_buttons {
+  position: fixed;
+  bottom: 15px;
+
+}

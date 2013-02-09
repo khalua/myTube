@@ -1,19 +1,24 @@
 <% if @rows.present?  %>
-<% @rows.each do |row| %>
- <div class="row-fluid">
+<div class="row-fluid">
   <ul class="thumbnails">
+<% @rows.each do |row| %>
+
+
     <li class="span4">
       <div class="thumbnail">
         <%= row['url'] %>
         <div class="caption">
           <h3><%= row['title'] %> </h3>
+          <div class='thumbnail_text'>
           <p><%= row['description'] %></p>
-          <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a></p>
+          <p class="thumbnail_buttons"><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a></p>
+          <div>
         </div>
       </div>
     </li>
-  </ul>
-</div>
+
 
 <% end %>
+</ul>
+</div>
 <% end %>
