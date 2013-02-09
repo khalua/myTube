@@ -39,7 +39,7 @@
           <ul class="nav">
             <li><a href="/new">Add a video</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">View video categories  <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">View videos  <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <% @nav_rows.each do |row| %>
                 <li><a href="/videos/<%= row['category'] %>"><%= row['category'] %></a></li>
