@@ -52,6 +52,16 @@ post '/videos/:video_id/delete' do
   redirect to('/videos')
 end
 
+get '/videos/:video_id/edit' do
+  @video_id = params[:video_id]
+  sql = "select * from videos where id = #{@video_id};"
+  rows = run_sql(sql)
+  @row = rows.first
+  erb :new
+
+end
+
+
 def run_sql(sql)
   conn = PG.connect(:dbname =>'mytube', :host => 'localhost')
   result = conn.exec(sql)
