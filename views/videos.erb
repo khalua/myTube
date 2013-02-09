@@ -6,7 +6,7 @@
       <form action='/videos/<%= row['id'] %>/delete' method="post" name="video_id">
         <button class="btn btn-danger btn-mini">Delete</button>
       </form>
-      <%= row['url'] %>
+      <iframe width="281" height="158" src="<%= row['url'] %>" frameborder="0" allowfullscreen></iframe>
     </a>
     <h3><%= row['name'] %></h3>
     <p><%= row['description'] %></p>

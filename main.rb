@@ -21,7 +21,7 @@ end
 post '/create' do
   @name = params[:name].gsub("'","")
   @description = params[:description].gsub("'","")
-  @url = params[:url]
+  @url = params[:url].match(/(http:\/\/[a-z\.\/A-Za-z0-9_-]+)/)[1]
   @category = params[:category].gsub("'","")
 
   sql = "insert into videos (name, description, url, category) values ('#{@name}','#{@description}','#{@url}','#{@category}');"
