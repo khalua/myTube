@@ -1,8 +1,8 @@
 create table videos (
   id serial4 primary key,
-  title varchar(30) not null,
+  title varchar(50) not null,
   description text,
-  url varchar(100),
-  category varchar(25),
+  url varchar(1000),
+  category varchar(50),
   timestamp timestamp
 )

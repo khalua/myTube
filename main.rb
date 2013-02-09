@@ -13,6 +13,8 @@ get '/new' do
 end
 
 get '/videos' do
+  sql = "select * from videos;"
+  @rows = run_sql(sql)
   erb :videos
 end
 
@@ -22,8 +24,11 @@ post '/create' do
   @url = params[:url]
   @category = params[:category]
 
+  sql = "insert into videos (title, description, url, category, timestamp) values ('#{@title}','#{@description}','#{@url}','#{@category}',now());"
 
+  run_sql(sql)
 
+  redirect to('/videos')
 
 end
 
