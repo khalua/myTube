@@ -5,7 +5,6 @@
       <label class="control-label">Title</label>
       <div class="controls">
         <input type="text" name="name" class="input-xlarge" value="<%= @row['name'] if @row %>">
-        <p class="help-block">Enter your title of the linked movie</p>
       </div>
     </div>
     <div class="control-group">
@@ -18,8 +17,8 @@
       <label class="control-label">URL</label>
       <div class="controls">
         <input type="text" name="url" class="input-xlarge" value="<%= @row['url'] if @row %>">
-        <p class="help-block">Paste the URL of the video to add</p>
-        <p class="help-block">Dimensions should be 280x158</p>
+        <p class="help-block">Paste only the URL of the video to add</p>
+        <p class="help-block">Example: <strong>http://www.youtube.com/embed/z5Otla5157c</strong> </p>
       </div>
     </div>
     <div class="control-group">
