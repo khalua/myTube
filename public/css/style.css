@@ -1,17 +1,27 @@
-.thumbnail {
-  height: 400px;
+body {
+  background: url('/images/low_contrast_linen.png');
 }
 
-.thumbnail .padding {
-  padding: 0px;
+.thumbnail {
+  height: 410px;
+  padding: 7px;
 }
 
 iframe {
   margin-top: 5px;
 }
 
-form {
-  margin: 0px
+form,legend {
+  padding: 5px 0 5px 0;
+  margin: 0;
+}
+
+.form-actions {
+  opacity: 1.5;
+  padding: 5px 0 5px 0;
+  border-radius: 5px;
+  background: url('/images/low_contrast_linen.png');
+  border-top: 0;
 }
 
 .thumbnail .caption {
@@ -22,8 +32,18 @@ form {
   line-height: 20px;
 }
 
+h6 {
+  padding-bottom: 5px;
+}
+
+.help-block,.thumbnail, legend, form, .thumbnail h3 {
+  color: #c1c1c1;
+}
+
 .vid_description{
-  height:125px;
+  position: relative;
+  top: -12px;
+  height:100px;
   width: 280px;
   overflow: scroll;
 
@@ -33,4 +53,8 @@ button .trash {
   background-position: -456px 0;
   width: 14px;
   height: 14px;
+}
+.carousel {
+  width: 850px;
+  margin: 0 auto 0 auto;
 }

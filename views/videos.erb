@@ -4,21 +4,21 @@
 
   <li class="span4">
     <div class="thumbnail">
+      <div class="caption">
+        <h3><%= row['name'] %></h3>
+      </div>
       <form action='/videos/<%= row['id'] %>/delete' method="post" name="video_id">
        <button type="submit" class="btn btn-mini">
         <i class="icon-trash" data-toggle="tooltip" title="Delete video"></i>
       </button>
     </form>
     <iframe width="281" height="158" src="<%= row['url'] %>" frameborder="0" allowfullscreen></iframe>
-    <a href="/videos/<%= row['id'] %>/edit" data-toggle="tooltip" title="Edit video" ><i class="icon-edit"></i></a>
+    <a href="/videos/<%= row['id'] %>/edit" data-toggle="tooltip" title="Edit video" ><i class="icon-edit icon-white"></i></a>
 
-    <div class="caption">
-      <h3><%= row['name'] %></h3>
-    </div>
     <h6>Category: <%= row['category'] %></h6>
     <div class="vid_description">
-    <p><%= row['description'] %></p>
-  </div>
+      <p><%= row['description'] %></p>
+    </div>
   </div>
 </li>
 
