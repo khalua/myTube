@@ -4,8 +4,22 @@ require 'sinatra/reloader' if development?
 require 'pg'
 require 'active_support/all'
 
+before do
+  sql = "select distinct category from videos order by category;"
+  @nav_rows = run_sql(sql)
+end
+
+
 get '/' do
   erb :home
+end
+
+
+get '/videos/:category' do
+  @category = params[:category]
+  sql = "select * from videos where category = '#{@category}';"
+  @rows = run_sql(sql)
+  erb :videos
 end
 
 get '/new' do
@@ -22,6 +36,7 @@ post '/create' do
   @name = params[:name].gsub("'","")
   @description = params[:description].gsub("'","")
   @url = params[:url].match(/(http:\/\/[a-z\.\/A-Za-z0-9_-]+)/)[1]
+  #@url = params[:url]
   @category = params[:category].gsub("'","")
 
   sql = "insert into videos (name, description, url, category) values ('#{@name}','#{@description}','#{@url}','#{@category}');"

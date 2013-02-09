@@ -1,17 +1,18 @@
 <ul class="thumbnails">
-<% @rows.each do |row| %>
+  <% @rows.each do |row| %>
 
   <li class="span4">
     <a class="thumbnail">
-      <form action='/videos/<%= row['id'] %>/delete' method="post" name="video_id">
-        <button class="btn btn-danger btn-mini">Delete</button>
-      </form>
       <iframe width="281" height="158" src="<%= row['url'] %>" frameborder="0" allowfullscreen></iframe>
+
+    <form action='/videos/<%= row['id'] %>/delete' method="post" name="video_id">
+      <button class="btn btn-danger btn-mini">Delete</button>
+    </form>
     </a>
     <h3><%= row['name'] %></h3>
     <p><%= row['description'] %></p>
   </li>
 
-<% end %>
+  <% end %>
 
 </ul>
