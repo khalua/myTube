@@ -36,7 +36,6 @@ post '/create' do
   @name = params[:name].gsub("'","")
   @description = params[:description].gsub("'","")
   @url = params[:url].match(/(http:\/\/[a-z\.\/A-Za-z0-9_-]+)/)[1]
-  #@url = params[:url]
   @category = params[:category].gsub("'","")
 
   sql = "insert into videos (name, description, url, category) values ('#{@name}','#{@description}','#{@url}','#{@category}');"
@@ -59,6 +58,17 @@ get '/videos/:video_id/edit' do
   @row = rows.first
   erb :new
 
+end
+
+post '/videos/:video_id' do
+  @video_id = params[:video_id]
+  @name = params[:name]
+  @description = params[:description]
+  @category = params[:category]
+
+  sql = "update videos set name = '#{@name}', description = '#{@description}', category = '#{@category}' where id = #{@video_id};"
+  run_sql(sql)
+  redirect to('/videos')
 end
 
 

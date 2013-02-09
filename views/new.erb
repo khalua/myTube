@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="post" action='<%= @row.nil? ? "/create" : "/videos/@{@row['id]}" %>'>
+<form class="form-horizontal" method="post" action='<%= @row.nil? ? "/create" : "/videos/#{@row['id']}" %>'>
   <fieldset>
     <legend>Add a video link</legend>
     <div class="control-group">
@@ -35,7 +35,7 @@
       </div>
     </div>
     <div class="form-actions">
-      <button class="btn btn-primary">Add video</button>
+      <button class="btn btn-primary"><%= @row.nil? ? "Add video" : "Edit video" %></button>
       <button class="btn">Cancel</button>
     </div>
   </fieldset>

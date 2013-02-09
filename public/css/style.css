@@ -1,18 +1,7 @@
-select {
-  width: 284px;
+.thumbnail .padding {
+  padding: 0px;
 }
 
-.thumbnail {
-  /*height: 325px;*/
-}
-
-.thumbnail_text {
-  height: 140px;
-  overflow: scroll;
-}
-
-.thumbnail_buttons {
-  position: fixed;
-  bottom: 15px;
-
+iframe {
+  margin-top: 5px;
 }
