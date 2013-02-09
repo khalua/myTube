@@ -19,17 +19,22 @@ get '/videos' do
 end
 
 post '/create' do
-  @title = params[:title].gsub("'","")
+  @name = params[:name].gsub("'","")
   @description = params[:description].gsub("'","")
   @url = params[:url]
   @category = params[:category].gsub("'","")
 
-  sql = "insert into videos (title, description, url, category, timestamp) values ('#{@title}','#{@description}','#{@url}','#{@category}',now());"
-
+  sql = "insert into videos (name, description, url, category) values ('#{@name}','#{@description}','#{@url}','#{@category}');"
   run_sql(sql)
-
   redirect to('/videos')
+end
 
+
+post '/videos/:video_id/delete' do
+  @video_id = params[:video_id]
+  sql = "delete from videos where id = #{@video_id};"
+  run_sql(sql)
+  redirect to('/videos')
 end
 
 def run_sql(sql)
