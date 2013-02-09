@@ -1,7 +1,36 @@
+.thumbnail {
+  height: 400px;
+}
+
 .thumbnail .padding {
   padding: 0px;
 }
 
 iframe {
   margin-top: 5px;
+}
+
+form {
+  margin: 0px
+}
+
+.thumbnail .caption {
+  padding: 0px;
+}
+
+.thumbnail .caption h1, h2, h3 {
+  line-height: 20px;
+}
+
+.vid_description{
+  height:125px;
+  width: 280px;
+  overflow: scroll;
+
+}
+button .trash {
+  background-image: url("/bootstrap/img/glyphicons-halflings.png");
+  background-position: -456px 0;
+  width: 14px;
+  height: 14px;
 }
