@@ -51,7 +51,7 @@ h6 {
 .vid_description{
   position: relative;
   top: -12px;
-  height:100px;
+  height:140px;
   width: 280px;
   overflow: scroll;
 
@@ -74,7 +74,12 @@ button .trash {
 }
 
 footer {
-  color: #c1c1c1;
+  background-color: black;
+  opacity: 0.8;
+  color: #4b4b4b;
+}
+
+footer p {
   margin-right: 20px;
 }
 
