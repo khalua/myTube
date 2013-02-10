@@ -12,7 +12,7 @@
 
       <a href="/videos/<%= row['id'] %>/edit" data-toggle="tooltip" title="Edit video" ><i class="icon-edit icon-white"></i></a>
 
-<!-- begin modal -->
+      <!-- begin modal -->
       <a href="#deleteModal<%= row['id'] %>" data-toggle="modal" title="Delete video"><i class="icon-trash icon-white"></i></a>
 
       <div id= "deleteModal<%= row['id'] %>" class="modal hide fade">
@@ -28,7 +28,7 @@
           <a href="/videos/<%= row['id'] %>/delete" class="btn btn-danger">Delete</a>
         </div>
       </div>
-<!-- end modal -->
+      <!-- end modal -->
 
       <h6>Category: <%= row['category'] %></h6>
       <div class="vid_description">
