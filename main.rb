@@ -20,6 +20,15 @@ get '/videos/:category' do
   erb :videos
 end
 
+get '/carousel' do
+  sql1 = "select * from videos order by id desc;"
+  @rows = run_sql(sql1)
+  sql2 = "select max(id) from videos;"
+  max = run_sql(sql2)
+  @max_id = max.first
+  erb :carousel
+end
+
 get '/new' do
   erb :new
 end
