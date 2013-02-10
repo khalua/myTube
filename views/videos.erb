@@ -1,3 +1,4 @@
+<h1><%= @category.nil? ? "All Videos" : @category %></h1>
 
 <ul class="thumbnails">
   <% @rows.each do |row| %>
@@ -23,5 +24,6 @@
 </li>
 
 <% end %>
+
 
 </ul>

@@ -1,6 +1,6 @@
 <form class="form-horizontal" method="post" action='<%= @row.nil? ? "/create" : "/videos/#{@row['id']}" %>'>
   <fieldset>
-    <legend>Add a video link</legend>
+    <legend>Add a video</legend>
     <div class="control-group">
       <label class="control-label">Title</label>
       <div class="controls">
@@ -10,7 +10,7 @@
     <div class="control-group">
       <label class="control-label">Description</label>
       <div class="controls">
-        <input type="text" name="description" class="input-block-level" value="<%= @row['description'] if @row %>">
+        <input type="text" name="description" class="input-xlarge" value="<%= @row['description'] if @row %>">
       </div>
     </div>
     <div class="control-group">
@@ -28,7 +28,7 @@
         <p class="help-block">Existing Categories:</p>
         <p class="help-block">
           <% @nav_rows.each do |row| %>
-          |<%= row['category'] %>|
+          <%= row['category'] %> /
           <% end %>
         </p>
       </div>

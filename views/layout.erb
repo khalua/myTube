@@ -25,37 +25,8 @@
 </head>
 <body>
   <div class="container">
-  <div class="navbar">
-    <div class="navbar-inner">
 
-
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <a class="brand" href="/">myTube</a>
-        <div class="nav-collapse">
-          <ul class="nav">
-            <li><a href="/new">Add a video</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">View videos  <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <% @nav_rows.each do |row| %>
-                <li><a href="/videos/<%= row['category'] %>"><%= row['category'] %></a></li>
-                <% end %>
-                <li class="divider"></li>
-                <li><a href="/videos">Show all videos</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav pull-right">
-            <li><a href="#">About</a></li>
-          </ul>
-        </div><!-- /.nav-collapse -->
-      </div>
-    </div><!-- /navbar-inner -->
-
+  <%= erb :navbar %>
 
 <%= yield %>
 

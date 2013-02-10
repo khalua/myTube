@@ -36,7 +36,7 @@ h6 {
   padding-bottom: 5px;
 }
 
-.help-block,.thumbnail, legend, form, .thumbnail h3 {
+.help-block,.thumbnail, legend, form, h1, .thumbnail h3 {
   color: #c1c1c1;
 }
 
@@ -57,4 +57,9 @@ button .trash {
 .carousel {
   width: 850px;
   margin: 0 auto 0 auto;
+}
+
+.form-horizontal input
+ {
+  height: 40px;
 }

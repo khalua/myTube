@@ -5,15 +5,13 @@ require 'pg'
 require 'active_support/all'
 
 before do
-  sql = "select distinct category from videos order by category;"
+  sql = "select category, count(category) as count from videos group by category order by category;"
   @nav_rows = run_sql(sql)
 end
-
 
 get '/' do
   erb :home
 end
-
 
 get '/videos/:category' do
   @category = params[:category]
@@ -24,6 +22,10 @@ end
 
 get '/new' do
   erb :new
+end
+
+get '/about' do
+  erb :about
 end
 
 get '/videos' do
@@ -42,7 +44,6 @@ post '/create' do
   run_sql(sql)
   redirect to('/videos')
 end
-
 
 post '/videos/:video_id/delete' do
   @video_id = params[:video_id]
