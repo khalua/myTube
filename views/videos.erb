@@ -8,22 +8,21 @@
       <div class="caption">
         <h3><%= row['name'] %></h3>
       </div>
-      <form action='/videos/<%= row['id'] %>/delete' method="post" name="video_id">
-       <button type="submit" class="btn btn-mini">
-        <i class="icon-trash" data-toggle="tooltip" title="Delete video"></i>
-      </button>
-    </form>
-    <iframe width="281" height="158" src="<%= row['url'] %>" frameborder="0" allowfullscreen></iframe>
-    <a href="/videos/<%= row['id'] %>/edit" data-toggle="tooltip" title="Edit video" ><i class="icon-edit icon-white"></i></a>
+      <iframe width="281" height="158" src="<%= row['url'] %>" frameborder="0" allowfullscreen></iframe>
 
-    <h6>Category: <%= row['category'] %></h6>
-    <div class="vid_description">
-      <p><%= row['description'] %></p>
+      <a href="/videos/<%= row['id'] %>/edit" data-toggle="tooltip" title="Edit video" ><i class="icon-edit icon-white"></i></a>
+
+      <a href="/videos/<%= row['id'] %>/delete" data-toggle="tooltip" title="Delete video" ><i class="icon-trash icon-white"></i></a>
+
+
+      <h6>Category: <%= row['category'] %></h6>
+      <div class="vid_description">
+        <p><%= row['description'] %></p>
+      </div>
     </div>
-  </div>
-</li>
+  </li>
 
-<% end %>
+  <% end %>
 
 
 </ul>

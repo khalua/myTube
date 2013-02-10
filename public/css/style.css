@@ -70,9 +70,14 @@ button .trash {
 .form-horizontal input
  {
   height: 40px;
+  width: 500px;
 }
 
 footer {
   color: #c1c1c1;
   margin-right: 20px;
+}
+
+.navbar {
+  margin-top: 20px;
 }

@@ -38,7 +38,7 @@ get '/about' do
 end
 
 get '/videos' do
-  sql = "select * from videos;"
+  sql = "select * from videos order by id desc;"
   @rows = run_sql(sql)
   erb :videos
 end
@@ -54,12 +54,20 @@ post '/create' do
   redirect to('/videos')
 end
 
-post '/videos/:video_id/delete' do
+post '/videos/:video_id/delete' do #not used. using get instead.
   @video_id = params[:video_id]
   sql = "delete from videos where id = #{@video_id};"
   run_sql(sql)
   redirect to('/videos')
 end
+
+get '/videos/:video_id/delete' do
+  @video_id = params[:video_id]
+  sql = "delete from videos where id = #{@video_id};"
+  run_sql(sql)
+  redirect to('/videos')
+end
+
 
 get '/videos/:video_id/edit' do
   @video_id = params[:video_id]
